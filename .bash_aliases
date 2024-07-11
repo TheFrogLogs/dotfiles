@@ -88,6 +88,11 @@ fs2() {
     done
 }
 
+disup() {
+    cd ~/Downloads
+    n=$(ls -d -- *.deb | cut -c 13-14 | sort -n | tail -n 1)
+    sudo dpkg -i discord*$n.deb
+}
 
 fs() {
     tmux new-window
